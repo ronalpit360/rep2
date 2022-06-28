@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar> <ion-buttons slot="start">  <ion-back-button> </ion-back-button> </ion-buttons>
+     <ion-title> {{currentConcierto?.name}}</ion-title> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>  Ingresos del Concierto
+      <span [class.profitable]="currentConcierto?.revenue > 0"     [class.no-profit]="currentConcierto?.revenue <= 0 "  >
+      {{currentConcierto?.revenue | currency}}  </span>
+    </ion-card-header>  <ion-card-content>
+      <p>Ticket: <strong>${{currentConcierto?.price}}</strong></p>
+      <p>fecha: <strong>{{currentConcierto?.date}}</strong></p>
+    </ion-card-content>
+  </ion-card>
+  <ion-item >
+    <ion-label position="stacked">Nombre del asistente </ion-label> 
+   <ion-input [(ngModel)]="asistenteName" type="text" placeholder="Cual es el nombre del asistente? "></ion-input> 
+   </ion-item>
+   <ion-item >
+     <ion-label position="stacked">Apellido del asistente</ion-label> 
+    <ion-input [(ngModel)]="conciertoPrice" type="text" placeholder="Cual es el apellido del asistente?"></ion-input> 
+    </ion-item>
+  <ion-button expand="block" color="primary" (click)="createAsistente(conciertoName, conciertoDate, conciertoPrice, conciertoCost)">Ingresar Asistente</ion-button>
+</ion-content>

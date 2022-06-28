@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Crear Concierto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item >
+ <ion-label position="stacked">Nombre del concierto </ion-label> 
+<ion-input [(ngModel)]="conciertoName" type="text" placeholder="Cual es el nombre del concierto? "></ion-input> 
+</ion-item>
+<ion-item >
+  <ion-label position="stacked">Precio del concierto</ion-label> 
+ <ion-input [(ngModel)]="conciertoPrice" type="number" placeholder="Cual es el valor del boleto?"></ion-input> 
+ </ion-item>
+ <ion-item >
+  <ion-label position="stacked">Costo del concierto</ion-label> 
+ <ion-input [(ngModel)]="conciertoCost" type="number" placeholder="Cuanto espera recaudar?"></ion-input> 
+ </ion-item>
+ <ion-item >
+  <ion-label position="stacked">fecha del concierto</ion-label> 
+ <ion-input [(ngModel)]="conciertoDate" displayFormat="DD, MM, YY" PickerFormat="DD MM YY"  min="2017"
+  max="2021-12-31"  placeholder="Dia/Mes/Año?"></ion-input> 
+ </ion-item>
+ <ion-button expand="block" (click)="createConcierto(conciertoName, conciertoDate, conciertoPrice, conciertoCost)"> 
+  Crear concierto</ion-button> 
+
+</ion-content>
